@@ -19,7 +19,8 @@ public class ControleurBombermanGame implements InterfaceControleur {
 		viewGame.viewCommand.jButtonRestart.setEnabled(false);
 		viewGame.viewCommand.jButtonRun.setEnabled(true);
 		viewGame.viewCommand.jButtonStep.setEnabled(true);
-		viewGame.viewCommand.jButtonPause.setEnabled(true);
+        viewGame.viewCommand.jButtonPause.setEnabled(true);
+        System.out.println("blablabla");
     }
     
 	public void step() {
