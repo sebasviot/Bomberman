@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b7340b2-039d-4c12-a450-3ed72374dfc2" name="Default Changelist" comment="Test commit - ajout commentaire dans fichier test.java">
-      <change afterPath="$PROJECT_DIR$/.idea/Bomberman.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="3b7340b2-039d-4c12-a450-3ed72374dfc2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +43,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/.idea" />
     </key>
   </component>
@@ -81,7 +83,7 @@
       <workItem from="1576507914768" duration="30000" />
       <workItem from="1576508228380" duration="2971000" />
       <workItem from="1576579282685" duration="1150000" />
-      <workItem from="1576584052116" duration="385000" />
+      <workItem from="1576584052116" duration="700000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit - ajout commentaire dans fichier test.java">
       <created>1576510534876</created>
@@ -90,7 +92,21 @@
       <option name="project" value="LOCAL" />
       <updated>1576510534876</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="config intellij">
+      <created>1576584530337</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576584530337</updated>
+    </task>
+    <task id="LOCAL-00003" summary="config intellij">
+      <created>1576584633005</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1576584633006</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +137,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test commit - ajout commentaire dans fichier test.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test commit - ajout commentaire dans fichier test.java" />
+    <MESSAGE value="config intellij" />
+    <option name="LAST_COMMIT_MESSAGE" value="config intellij" />
   </component>
 </project>
