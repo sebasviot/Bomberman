@@ -28,7 +28,7 @@ public class ViewBombermanGame implements Observer {
 		this.topPanel = new JPanel();
 		this.frameBomberman = new JFrame();
 
-		frameBomberman.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  // Ferme l'application quand on quitte la vue
+		frameBomberman.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Ferme l'application quand on quitte la vue
 
 		frameBomberman.setTitle("Bomberman");
 		frameBomberman.setSize(new Dimension(1000, 1000));

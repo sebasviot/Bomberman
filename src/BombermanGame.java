@@ -183,7 +183,6 @@ public class BombermanGame extends Game implements Runnable {
 		default:
 			move = null;
 			break;
-
 		}
 		InfoAgent infoAgent;
 		for (Agent agent : agents) {

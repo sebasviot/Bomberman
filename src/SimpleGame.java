@@ -21,5 +21,5 @@ public class SimpleGame extends Game {
 	public boolean gameContinue(){
 		return (super.maxTurn>super.turn);
 	}
-
+	
 }
