@@ -1,9 +1,9 @@
-
 public class ControleurBombermanGame implements InterfaceControleur {
     Game game;
     ViewBombermanGame viewGame;
     boolean gameInPause=false;
     boolean resumed=false;
+    // il faut que ce commentaire soit dans le master.
 
     public ControleurBombermanGame(String layout) throws Exception {
         this.game = new BombermanGame(10,1000, layout);
@@ -29,18 +29,12 @@ public class ControleurBombermanGame implements InterfaceControleur {
     }
 
 	public void run() {
-        if (!gameInPause) {
-            game.launch();
-        }
-        else {
-            gameInPause = false;
-            game.resume();
-        }
+        viewGame.viewCommand.jButtonPause.setEnabled(true);
+        game.launch();
     }
 
 	public void stop(){
-        gameInPause = true;
-        game.pause();
+        game.isRunning = false;
         viewGame.viewCommand.jButtonPause.setEnabled(false);
         viewGame.viewCommand.jButtonRun.setEnabled(true);
         viewGame.viewCommand.jButtonStep.setEnabled(true);
