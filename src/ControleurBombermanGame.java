@@ -9,6 +9,7 @@ public class ControleurBombermanGame implements InterfaceControleur {
         this.game = new BombermanGame(10,1000, layout);
         this.viewGame = new ViewBombermanGame(this, layout);
         game.addObserver(viewGame);
+        //Commentaire pour voir dans quelle branche je suis
     }
 
     public Game getGame() {
