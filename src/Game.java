@@ -19,6 +19,8 @@ public abstract class Game extends Observable implements Runnable{
 	public abstract void takeTurn();
 	public abstract void gameOver();
 	public abstract boolean gameContinue();
+	public abstract void pause();
+	public abstract void resume();
 	
 	//Methodes concrètes
 	

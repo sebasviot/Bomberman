@@ -2,6 +2,8 @@
 public class ControleurBombermanGame implements InterfaceControleur {
     Game game;
     ViewBombermanGame viewGame;
+    boolean gameInPause=false;
+    boolean resumed=false;
 
     public ControleurBombermanGame(String layout) throws Exception {
         this.game = new BombermanGame(10,1000, layout);
@@ -20,7 +22,6 @@ public class ControleurBombermanGame implements InterfaceControleur {
 		viewGame.viewCommand.jButtonRun.setEnabled(true);
 		viewGame.viewCommand.jButtonStep.setEnabled(true);
         viewGame.viewCommand.jButtonPause.setEnabled(true);
-        System.out.println("blablabla");
     }
     
 	public void step() {
@@ -28,11 +29,21 @@ public class ControleurBombermanGame implements InterfaceControleur {
     }
 
 	public void run() {
-        game.launch();
+        if (!gameInPause) {
+            game.launch();
+        }
+        else {
+            gameInPause = false;
+            game.resume();
+        }
     }
 
 	public void stop(){
-
+        gameInPause = true;
+        game.pause();
+        viewGame.viewCommand.jButtonPause.setEnabled(false);
+        viewGame.viewCommand.jButtonRun.setEnabled(true);
+        viewGame.viewCommand.jButtonStep.setEnabled(true);
     }
     
 	public void setTime(double time) {
