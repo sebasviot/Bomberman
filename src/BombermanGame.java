@@ -61,7 +61,7 @@ public class BombermanGame extends Game implements Runnable {
 				break;
 			}
 		}
-
+		setChanged();
 		notifyObservers();
 	}
 
@@ -137,8 +137,7 @@ public class BombermanGame extends Game implements Runnable {
 		default:
 
 		}
-		setChanged();
-		notifyObservers();
+
 	} // END METHODE moveAgent
 
 	public ArrayList<Agent> getAgents() {
@@ -162,7 +161,6 @@ public class BombermanGame extends Game implements Runnable {
 		AgentAction move;
 		double six = 6;
 		randMove = (int) Math.round(((Math.random()) * six));
-		System.out.println(randMove);
 		switch (randMove) {
 		case 0:
 			move = AgentAction.MOVE_UP;
@@ -210,22 +208,6 @@ public class BombermanGame extends Game implements Runnable {
 				infoAgents.add(infoAgent);
 		}
 		return infoAgents;
-	}
-
-	public void pause() {
-		while (!resumed) {
-			try {
-				this.thread.sleep(1);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
-
-	@Override
-	public void resume() {
-		resumed = true;
 	}
 
 }

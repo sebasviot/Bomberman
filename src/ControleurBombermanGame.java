@@ -1,4 +1,3 @@
-
 public class ControleurBombermanGame implements InterfaceControleur {
     Game game;
     ViewBombermanGame viewGame;
@@ -9,7 +8,6 @@ public class ControleurBombermanGame implements InterfaceControleur {
         this.game = new BombermanGame(10,1000, layout);
         this.viewGame = new ViewBombermanGame(this, layout);
         game.addObserver(viewGame);
-        //Commentaire pour voir dans quelle branche je suis
     }
 
     public Game getGame() {
@@ -30,18 +28,12 @@ public class ControleurBombermanGame implements InterfaceControleur {
     }
 
 	public void run() {
-        if (!gameInPause) {
-            game.launch();
-        }
-        else {
-            gameInPause = false;
-            game.resume();
-        }
+        viewGame.viewCommand.jButtonPause.setEnabled(true);
+        game.launch();
     }
 
 	public void stop(){
-        gameInPause = true;
-        game.pause();
+        game.isRunning = false;
         viewGame.viewCommand.jButtonPause.setEnabled(false);
         viewGame.viewCommand.jButtonRun.setEnabled(true);
         viewGame.viewCommand.jButtonStep.setEnabled(true);

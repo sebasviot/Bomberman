@@ -22,16 +22,4 @@ public class SimpleGame extends Game {
 		return (super.maxTurn>super.turn);
 	}
 
-	@Override
-	public void pause() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void resume() {
-		// TODO Auto-generated method stub
-
-	}
-	
 }
