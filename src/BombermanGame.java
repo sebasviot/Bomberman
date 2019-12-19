@@ -11,9 +11,9 @@ public class BombermanGame extends Game implements Runnable {
 	protected int randMove = 0;
 	protected boolean resumed = false;
 
-	public BombermanGame(int mt, long t, String layout) throws Exception {
+	public BombermanGame(int mt, long t, Map map) throws Exception {
 		super(mt, t);
-		this.map = new Map(layout);
+		this.map = map;
 		this.factory = new AgentFactory();
 		this.agents = new ArrayList<Agent>();
 		this.items = new ArrayList<InfoItem>();

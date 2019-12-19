@@ -3,11 +3,20 @@ public class ControleurBombermanGame implements InterfaceControleur {
     ViewBombermanGame viewGame;
     boolean gameInPause=false;
     boolean resumed=false;
-    // il faut que ce commentaire soit dans le master.
+    protected Map map = new Map("src/layouts/alone.lay");
 
-    public ControleurBombermanGame(String layout) throws Exception {
-        this.game = new BombermanGame(10,1000, layout);
-        this.viewGame = new ViewBombermanGame(this, layout);
+
+    public ControleurBombermanGame() throws Exception {
+        this.game = new BombermanGame(10,1000, this.map);
+        this.viewGame = new ViewBombermanGame(this, this.map);
+        game.addObserver(viewGame);
+    }
+
+    public void newGame(String layout) throws Exception {
+        this.viewGame.destroyView();
+        this.map = new Map(layout);
+        this.game = new BombermanGame(10,1000, this.map);
+        this.viewGame = new ViewBombermanGame(this, this.map);
         game.addObserver(viewGame);
     }
 
@@ -23,7 +32,7 @@ public class ControleurBombermanGame implements InterfaceControleur {
 		viewGame.viewCommand.jButtonStep.setEnabled(true);
         viewGame.viewCommand.jButtonPause.setEnabled(true);
     }
-    
+
 	public void step() {
         game.step();
     }
@@ -39,9 +48,11 @@ public class ControleurBombermanGame implements InterfaceControleur {
         viewGame.viewCommand.jButtonRun.setEnabled(true);
         viewGame.viewCommand.jButtonStep.setEnabled(true);
     }
-    
+
 	public void setTime(double time) {
         game.setTime(time);
     }
+
+
 
 }

@@ -18,10 +18,10 @@ public class ViewBombermanGame implements Observer {
 	protected JFrame frameBomberman;
 	protected GridLayout topLayout;
 
-	public ViewBombermanGame(ControleurBombermanGame controlleur, String layout) throws Exception {
+	public ViewBombermanGame(ControleurBombermanGame controlleur, Map map) throws Exception {
 		this.controleurBomberman = controlleur;
 		this.viewCommand = new ViewCommand(controlleur, controlleur.game);
-		this.map = new Map(layout);
+		this.map = map;
 		this.panelBomberman = new PanelBomberman(this.map);
 
 		this.topLayout = new GridLayout(2,1);
@@ -49,14 +49,15 @@ public class ViewBombermanGame implements Observer {
 		
 	}
 
+	public void destroyView(){
+		this.frameBomberman.dispose();
+	}
+
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		BombermanGame bombermanGame = (BombermanGame) arg0;
-
 		panelBomberman.setInfoGame(bombermanGame.getBreakableWalls(), bombermanGame.getInfoAgents(), bombermanGame.getItems(), bombermanGame.getBombs());
-
 		frameBomberman.repaint();
-
 	}
 
 }
