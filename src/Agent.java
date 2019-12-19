@@ -2,8 +2,13 @@ public abstract class Agent {
     //Position
     int x;
     int y;
+    //Range
     int power;
+    //Couleur agent
     ColorAgent color;
+
+    //life
+    int life = 3;
 
     int id;
 
@@ -44,6 +49,14 @@ public abstract class Agent {
 
     public ColorAgent getColor() {
         return color;
+    }
+
+    public int getLife() {
+        return life;
+    }
+
+    public void hitted() {
+        --life;
     }
 
 }

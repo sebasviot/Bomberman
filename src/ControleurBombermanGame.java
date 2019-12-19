@@ -3,10 +3,9 @@ public class ControleurBombermanGame implements InterfaceControleur {
     ViewBombermanGame viewGame;
     boolean gameInPause=false;
     boolean resumed=false;
-    // il faut que ce commentaire soit dans le master.
 
     public ControleurBombermanGame(String layout) throws Exception {
-        this.game = new BombermanGame(10,1000, layout);
+        this.game = new BombermanGame(150,1000, layout);
         this.viewGame = new ViewBombermanGame(this, layout);
         game.addObserver(viewGame);
     }

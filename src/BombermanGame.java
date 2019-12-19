@@ -37,7 +37,29 @@ public class BombermanGame extends Game implements Runnable {
 
 	@Override
 	public void takeTurn() {
+		ArrayList<InfoBomb> bombExploded = new ArrayList<>();
+		for (InfoBomb b : bombs) {
+			switch (b.getStateBomb()) {
+				case Boom:
+					bombExploded.add(b);
+					break;
+				case Step3:
+					b.setStateBomb(StateBomb.Boom);
+					break;
+				case Step2:
+					b.setStateBomb(StateBomb.Step3);
+					break;
+				case Step1:
+					b.setStateBomb(StateBomb.Step2);
+					break;
+				default:
+					break;
+			}	
+		}
+		double six = 6;
+		randMove = (int) Math.round(((Math.random()) * six));
 		for (Agent agent : agents) {
+			randMove = (int) Math.round(((Math.random()) * six));
 			switch (randMove) {
 			case 0:
 				moveAgent(agent, AgentAction.MOVE_DOWN);
@@ -61,8 +83,9 @@ public class BombermanGame extends Game implements Runnable {
 				break;
 			}
 		}
-		setChanged();
-		notifyObservers();
+
+		damages(bombExploded);
+
 	}
 
 	@Override
@@ -78,15 +101,20 @@ public class BombermanGame extends Game implements Runnable {
 	}
 
 	public boolean isLegalMove(Agent agent, AgentAction action) {
+		/**
+		 * C'est un mouvement légal s'il n'y a pas de mur 
+		 * ET s'il n'y a pas de mur cassable.
+		 */
+
 		switch (action) {
 		case MOVE_DOWN:
-			return !(map.get_walls()[agent.get_x()][agent.get_y() + 1]);
+			return (! (map.get_walls()[agent.get_x()][agent.get_y() + 1]) && !(breakableWalls[agent.get_x()][agent.get_y() + 1]) );
 		case MOVE_UP:
-			return !(map.get_walls()[(agent.get_x())][agent.get_y() - 1]);
+			return (! (map.get_walls()[(agent.get_x())][agent.get_y() - 1]) && !(breakableWalls[(agent.get_x())][agent.get_y() - 1]) );
 		case MOVE_LEFT:
-			return !(map.get_walls()[(agent.get_x() - 1)][agent.get_y()]);
+			return (! (map.get_walls()[(agent.get_x() - 1)][agent.get_y()]) && !(breakableWalls[(agent.get_x() - 1)][agent.get_y()]) );
 		case MOVE_RIGHT:
-			return !(map.get_walls()[agent.get_x() + 1][agent.get_y()]);
+			return (! (map.get_walls()[agent.get_x() + 1][agent.get_y()]) && !(breakableWalls[agent.get_x() + 1][agent.get_y()]) );
 		case STOP:
 			return true;
 		case PUT_BOMB:
@@ -140,6 +168,54 @@ public class BombermanGame extends Game implements Runnable {
 
 	} // END METHODE moveAgent
 
+	public void damages(ArrayList<InfoBomb> bombsExploded) {
+		ArrayList<Agent> deadsAgents = new ArrayList<>();
+		for (InfoBomb bBoom : bombsExploded) {
+			//Faire perdre une vie aux agents qui sont sur la range de la bombe
+			for (int i=0; i<=bBoom.getRange(); i++) {
+				for (Agent a : agents) {
+					if (
+						(a.get_x() == (bBoom.getX())-i) && (a.get_y() == bBoom.getY())
+						|| (a.get_x() == (bBoom.getX())+i) && (a.get_y() == bBoom.getY())
+						|| (a.get_x() == (bBoom.getX())) && (a.get_y() == bBoom.getY()-i)
+						|| (a.get_x() == (bBoom.getX())) && (a.get_y() == bBoom.getY()+i)
+						) {
+						a.hitted();
+						//Ceux qui n'ont plus de vie sont dead.
+						if (a.getLife()==0) {
+							deadsAgents.add(a);
+						}
+					}
+				}
+				if ( breakableWalls[bBoom.getX()-i][bBoom.getY()] ){
+					breakableWalls[bBoom.getX()-i][bBoom.getY()] = false;
+				}
+				if ( breakableWalls[bBoom.getX()+i][bBoom.getY()] ){
+					breakableWalls[bBoom.getX()+i][bBoom.getY()] = false;
+				}
+				if ( breakableWalls[bBoom.getX()][bBoom.getY()-i] ){
+					breakableWalls[bBoom.getX()][bBoom.getY()-i] = false;
+				}
+				if ( breakableWalls[bBoom.getX()][bBoom.getY()+i] ){
+					breakableWalls[bBoom.getX()][bBoom.getY()+i] = false;
+				}
+
+			}
+
+			for (Agent adead : deadsAgents) {
+				agents.remove(adead);
+			}
+
+			for (InfoBomb b : bombsExploded) {
+				if (bBoom.equals(b)) {
+					bombs.remove(b);
+					break;
+				}
+			}
+		}
+
+	}
+
 	public ArrayList<Agent> getAgents() {
 		return agents;
 	}
@@ -159,8 +235,6 @@ public class BombermanGame extends Game implements Runnable {
 	public ArrayList<InfoAgent> getInfoAgents() {
 		ArrayList<InfoAgent> infoAgents = new ArrayList<>();
 		AgentAction move;
-		double six = 6;
-		randMove = (int) Math.round(((Math.random()) * six));
 		switch (randMove) {
 		case 0:
 			move = AgentAction.MOVE_UP;
@@ -203,8 +277,10 @@ public class BombermanGame extends Game implements Runnable {
 				infoAgent = null;
 				break;
 			}
+
 			if (infoAgent != null)
 				infoAgents.add(infoAgent);
+
 		}
 		return infoAgents;
 	}
