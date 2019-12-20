@@ -2,15 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b7340b2-039d-4c12-a450-3ed72374dfc2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AgentBirdStrategie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AgentBombermanStrategie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AgentEnnemyStrategie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AgentRaijonStrategie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AgentStrategie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AgentAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/AgentAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AgentBird.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/AgentBird.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AgentBomberman.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/AgentBomberman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AgentEnnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/AgentEnnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AgentFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/AgentFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/AgentRaijon.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/AgentRaijon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/BombermanGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/BombermanGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ColorAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ColorAgent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ControleurBombermanGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ControleurBombermanGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/InfoAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/InfoAgent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/InfoBomb.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/InfoBomb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/InfoItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/InfoItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/InterfaceControleur.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/InterfaceControleur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ItemType.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ItemType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/PanelBomberman.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PanelBomberman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/SimpleGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/SimpleGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/StateBomb.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/StateBomb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ViewBombermanGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ViewBombermanGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ViewCommand$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ViewCommand$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ViewCommand$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ViewCommand$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ViewCommand$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ViewCommand$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ViewCommand$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ViewCommand$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ViewCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ViewCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControleurBombermanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControleurBombermanGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ViewCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewCommand.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,6 +124,7 @@
       <workItem from="1576508228380" duration="2971000" />
       <workItem from="1576579282685" duration="1150000" />
       <workItem from="1576584052116" duration="700000" />
+      <workItem from="1576855169935" duration="1756000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit - ajout commentaire dans fichier test.java">
       <created>1576510534876</created>

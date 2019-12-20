@@ -67,6 +67,7 @@ public class ViewCommand implements Observer {
 		gridSliderLayout = new GridLayout(2, 1);
 		gridDownbandLayout = new GridLayout(1, 2);
 
+		jButtonRestart.setEnabled(true);
 		jButtonRun.setEnabled(false);
 		jButtonStep.setEnabled(false);
 		jButtonPause.setEnabled(false);

@@ -30,23 +30,32 @@ public class ControleurBombermanGame implements InterfaceControleur {
 		viewGame.viewCommand.jButtonRestart.setEnabled(false);
 		viewGame.viewCommand.jButtonRun.setEnabled(true);
 		viewGame.viewCommand.jButtonStep.setEnabled(true);
-        viewGame.viewCommand.jButtonPause.setEnabled(true);
+        viewGame.viewCommand.jButtonPause.setEnabled(false);
     }
 
 	public void step() {
         game.step();
+        viewGame.viewCommand.jButtonRestart.setEnabled(false);
+        viewGame.viewCommand.jButtonRun.setEnabled(true);
+        viewGame.viewCommand.jButtonStep.setEnabled(true);
+        viewGame.viewCommand.jButtonPause.setEnabled(false);
     }
 
 	public void run() {
-        viewGame.viewCommand.jButtonPause.setEnabled(true);
         game.launch();
+        viewGame.viewCommand.jButtonRestart.setEnabled(false);
+        viewGame.viewCommand.jButtonRun.setEnabled(false);
+        viewGame.viewCommand.jButtonStep.setEnabled(false);
+        viewGame.viewCommand.jButtonPause.setEnabled(true);
+
     }
 
 	public void stop(){
         game.isRunning = false;
-        viewGame.viewCommand.jButtonPause.setEnabled(false);
+        viewGame.viewCommand.jButtonRestart.setEnabled(true);
         viewGame.viewCommand.jButtonRun.setEnabled(true);
         viewGame.viewCommand.jButtonStep.setEnabled(true);
+        viewGame.viewCommand.jButtonPause.setEnabled(false);
     }
 
 	public void setTime(double time) {
