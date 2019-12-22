@@ -4,15 +4,17 @@ public class InfoBomb {
 	private int x;
 	private int y;
 	private int range;
+
+	private int owner;
 		
 	StateBomb stateBomb;
 
-	public InfoBomb(int x, int y, int range, StateBomb stateBomb) {
+	public InfoBomb(int x, int y, int range, int owner, StateBomb stateBomb) {
 		this.x=x;
 		this.y=y;
 		this.range=range;
+		this.owner=owner;
 		this.stateBomb = stateBomb;
-
 	}
 
 
@@ -54,6 +56,10 @@ public class InfoBomb {
 
 	public void setRange(int range) {
 		this.range = range;
+	}
+
+	public int getOwner() {
+		return owner;
 	}
 
 
