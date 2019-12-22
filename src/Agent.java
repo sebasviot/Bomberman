@@ -6,10 +6,12 @@ public abstract class Agent {
     int power;
     //Couleur agent
     ColorAgent color;
-
     //life
     int life = 3;
-
+    //Number of maximum bomb
+    int max_bomb = 1;
+    //score
+    int score = 0;
     int id;
 
     static int cpt=0;
@@ -23,23 +25,23 @@ public abstract class Agent {
         cpt++;
     }
 
-    public int get_x() {
+    public int getX() {
         return x;
     }
 
-    public int get_y() {
+    public int getY() {
         return y;
     }
 
-    public void set_x(int x) {
+    public void setX(int x) {
         this.x = x;
     }
 
-    public void set_y(int y) {
+    public void setY(int y) {
         this.y = y;
     }
 
-    public int get_power() {
+    public int getPower() {
         return power;
     }
 
@@ -51,12 +53,55 @@ public abstract class Agent {
         return color;
     }
 
+    public int getId(){
+        return id;
+    }
+
     public int getLife() {
         return life;
     }
 
     public void hitted() {
         --life;
+    }
+
+    public void break_wall() {
+        score+=10;
+    }
+    public void hit() {
+        score +=20;
+    }
+
+    public void kill() {
+        score +=50;
+    }
+
+    public void fireUp() {
+        ++power;
+    }
+
+    public void fireDown() {
+        if (power > 1 ) {
+            --power;
+        }
+    }
+
+    public void bombUp() {
+        ++max_bomb;
+    }
+
+    public void bombDown() {
+        if (max_bomb > 1) {
+            --max_bomb;
+        }
+    }
+
+    public void fireSuit() {
+
+    }
+
+    public void getIll() {
+        
     }
 
 }
